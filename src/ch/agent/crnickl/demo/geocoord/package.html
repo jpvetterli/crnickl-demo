@@ -1,0 +1,17 @@
+<html>
+<body>
+The <b>geocoord</b> demo shows how to set up
+a database to use custom value types for series.
+<p>
+The custom type is in question is GeoCoord. This interface is
+a quick shot solution for geographical position data with
+a toy implementation in CartesianGeoCoord.
+It is supported as a CrNiCKL value type with the help of a
+value scanner class, GeoCoordValueScanner. GeoCoordDatabase,
+a subclass of the standard JDBC implementation, must be told
+of this custom value scanner. A ValueAccessMethods<GeoCoord> class 
+must be also provided.
+<p>
+Just for fun, the demo also uses a non-standard type of time, FooTime.
+</body>
+</html>

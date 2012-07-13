@@ -1,0 +1,10 @@
+db.name=demo
+db.class=ch.agent.crnickl.demo.geocoord.GeoCoordDatabase
+session.jdbcDriver=org.hsqldb.jdbc.JDBCDriver
+session.jdbcUrl=jdbc:hsqldb:mem:demodb
+session.db=
+session.user=sa
+session.password=
+
+
+
