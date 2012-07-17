@@ -10,7 +10,7 @@ xmp {background: white; border: 1px dashed; padding: 10px}
 
 <h1>CrNiCKL Demo - README_geocoord</h1>
 
-<small>2012-07-12/jpv</small>
+<small>2012-07-17/jpv</small>
 
 <xmp>Copyright 2012 Hauser Olsson GmbH.
 
@@ -31,7 +31,7 @@ Thank you for your interest in CrNiCKL.
 CrNiCKL (pronounced <q>chronicle</q>) is a database for time series running on top of 
 SQL and (soon) NoSQL systems.
 <p>
-This note explains how to run the <b>geocoord</b> demo in crnickl-demo-1.1.0.jar
+This note explains how to run the <b>geocoord</b> demo in crnickl-demo-1.1.1.jar
 (or a later version of the archive). 
 The archive is large because all required third party libraries are included.
 The command line syntax assumes Linux, but things are kept simple
@@ -41,20 +41,20 @@ Of course, to run the demos, you need to have basic Java tools installed.
 A required prelimary step is to extract all libraries from the archive 
 (the ls command lists the directory before and after):
 <xmp>$ ls
-crnickl-demo-1.1.0.jar
-$ jar xf crnickl-demo-1.1.0.jar lib
+crnickl-demo-1.1.1.jar
+$ jar xf crnickl-demo-1.1.1.jar lib
 $ ls -1 lib
 batik-awt-util.jar
 batik-svggen.jar
 batik-util.jar
-crnickl-jdbc-1.0.0.jar
+crnickl-jdbc-1.1.0.jar
 hsqldb.jar
 jcommon-1.0.16.jar
 jfreechart-1.0.13.jar
 sqltool.jar
 t2-1.1.4.jar
 </xmp>
-The t2-1.1.4.jar and crnickl-jdbc-1.0.0.jar archives are our time series libraries.
+The t2-1.1.4.jar and crnickl-jdbc-1.1.0.jar archives are our time series libraries.
 The hsqldb archive contains the HyperSQL JDBC driver and sqltool is used to set up the 
 database from scratch. HyperSQL is useful in a demo like this because it can run in memory, and
 there is nothing to set up before running the demo. The other libraries are not used by
@@ -64,7 +64,7 @@ The <b>geocoord</b> demo is a toy version of a database supporting geographical
 postioning data.
 <p>
 To run the demo:
-<xmp>$ java -cp crnickl-demo-1.1.0.jar ch.agent.crnickl.demo.geocoord.GeoCoordDemo Resources/geocoord.parm
+<xmp>$ java -cp crnickl-demo-1.1.1.jar ch.agent.crnickl.demo.geocoord.GeoCoordDemo Resources/geocoord.parm
 2012-04-09 09:00:00   8151km (machin)
 2012-04-09 15:11:00   7000km (machin)
 --- clip clip ---

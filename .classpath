@@ -10,6 +10,6 @@
 	<classpathentry kind="lib" path="lib/batik-awt-util.jar"/>
 	<classpathentry kind="lib" path="lib/batik-svggen.jar"/>
 	<classpathentry kind="lib" path="lib/batik-util.jar"/>
-	<classpathentry kind="lib" path="lib/crnickl-jdbc-1.0.0.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ch.agent.crnickl.jdbc"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

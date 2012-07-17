@@ -15,7 +15,7 @@
  * 
  * Package: ch.agent.crnickl.demo.geocoord
  * Type: AccessMethodsForGeoCoord
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 package ch.agent.crnickl.demo.geocoord;
 
@@ -44,7 +44,7 @@ import ch.agent.t2.timeseries.TimeAddressable;
  * using {@link GeoCoord}.
  * 
  * @author Jean-Paul Vetterli
- * @version 1.0.0
+ * @version 1.0.1
  */
 public class AccessMethodsForGeoCoord extends JDBCDatabaseMethods implements ValueAccessMethods<GeoCoord> {
 	/*
@@ -231,7 +231,7 @@ public class AccessMethodsForGeoCoord extends JDBCDatabaseMethods implements Val
 		try {
 			check(Permission.MODIFY, series);
 			policy.willDelete(series, t);
-			policy.delete(series, t);
+			policy.deleteValue(series, t);
 			delete_values_by_t = open(DELETE_VALUES_BY_T, series, delete_values_by_t);
 			delete_values_by_t.setInt(1, getId(series));
 			delete_values_by_t.setInt(2, t.asOffset());
