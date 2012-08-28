@@ -64,9 +64,6 @@ public class CSVFile {
 	 * Construct a CSVFile.
 	 * 
 	 * @param fieldSeparator a pattern defining the field separator
-	 * @param skipFirstRow true to skip the first row
-	 * @param dateField the offset of the date field
-	 * @param stuffField offsets of fields with interesting stuff
 	 * @throws Exception
 	 */
 	public CSVFile(String fieldSeparator) throws KeyedException {

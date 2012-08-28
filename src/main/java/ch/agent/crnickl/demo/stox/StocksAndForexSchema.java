@@ -46,7 +46,7 @@ public class StocksAndForexSchema {
 	 * <li>numeric
 	 * </ul>
 	 * Both use built-in value scanners specified by
-	 * {@link ValueType.StandardValueType} keywords. Like other methods in this
+	 * StandardValueType keywords. Like other methods in this
 	 * class, the constructor applies updates but does not commit.
 	 * <p>
 	 * The constructor also adds the value type <em>numeric</em> to the values

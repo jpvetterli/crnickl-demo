@@ -75,8 +75,10 @@ public class GeoCoordDemo {
 	 */
 	public static void main(String[] args) {
 		if (args.length != 1) { 
-			System.err.println("This program wants the name of a parameter file, " +
-			"which can reside in the file system or on the class path.");
+			System.err.println("This program wants a single parameter string\n" +
+			"containing a list of comma-separated key-value pairs.\n" +
+			"Example: 'file=geo.parm' which names a file in the\n" + 
+			"file system or on the class path.");
 			System.exit(1);
 		}
 		try {
@@ -108,7 +110,7 @@ public class GeoCoordDemo {
 	 * @throws Exception
 	 */
 	public GeoCoordDemo(String parameterFile) throws Exception {
-		SimpleDatabaseManager sdm = new SimpleDatabaseManager("file=" + parameterFile);
+		SimpleDatabaseManager sdm = new SimpleDatabaseManager(parameterFile);
 		db = sdm.getDatabase();
 		setupLogging(db);
 		// we'll invent data
@@ -123,9 +125,9 @@ public class GeoCoordDemo {
 	 */
 	public void setUpHyperSQLDatabase() throws Exception {
 		// create tables and indexes of CrNiCKL
-		sql(((JDBCDatabase) db).getConnection(), "Resources/HyperSQL_DDL_base.sql");
+		sql(((JDBCDatabase) db).getConnection(), "sql/HyperSQL_DDL_base.sql");
 		// create table for geocoord values
-		sql(((JDBCDatabase) db).getConnection(), "Resources/HyperSQL_DDL_geocoord.sql");
+		sql(((JDBCDatabase) db).getConnection(), "sql/HyperSQL_DDL_geocoord.sql");
 	}
 	
 	/**

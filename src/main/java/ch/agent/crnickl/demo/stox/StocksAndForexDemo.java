@@ -63,8 +63,10 @@ public class StocksAndForexDemo {
 	 */
 	public static void main(String[] args) {
 		if (args.length != 1) { 
-			System.err.println("This program wants the name of a parameter file, " +
-			"which can reside in the file system or on the class path.");
+			System.err.println("This program wants a single parameter string\n" +
+			"containing a list of comma-separated key-value pairs.\n" +
+			"Example: 'file=stox-text.parm' which names a file in the\n" + 
+			"file system or on the class path.");
 			System.exit(1);
 		}
 		try {
@@ -96,7 +98,7 @@ public class StocksAndForexDemo {
 	 * @throws Exception
 	 */
 	public StocksAndForexDemo(String parameterFile) throws Exception {
-		SimpleDatabaseManager sdm = new SimpleDatabaseManager("file=" + parameterFile);
+		SimpleDatabaseManager sdm = new SimpleDatabaseManager(parameterFile);
 		db = sdm.getDatabase();
 		parameters = sdm.getParameters();
 	}
@@ -109,7 +111,7 @@ public class StocksAndForexDemo {
 	 */
 	public void setUpHyperSQLDatabase() throws Exception {
 		// create tables and indexes of CrNiCKL
-		sql(((JDBCDatabase) db).getConnection(), "Resources/HyperSQL_DDL_base.sql");
+		sql(((JDBCDatabase) db).getConnection(), "sql/HyperSQL_DDL_base.sql");
 	}
 	
 	/**

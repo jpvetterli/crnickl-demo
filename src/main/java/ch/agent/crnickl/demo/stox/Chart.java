@@ -94,9 +94,6 @@ public class Chart {
 		 * 
 		 * @param series a time series
 		 * @param name a short string describing the time series uniquely 
-		 * @param line if true display as line chart else as bar chart
-		 * @param weight a positive number giving the relative weight of the series
-		 * @param subPlot a number indicating a plot area
 		 */
 		public ChartSeries(TimeAddressable<Double> series, String name) {
 			if (series == null)
@@ -131,7 +128,7 @@ public class Chart {
 		}
 		/**
 		 * Return true for a line chart and false for a bar chart. Default: true.
-		 * @return
+		 * @return true if a line chart
 		 */
 		public boolean isLine() {
 			return line;

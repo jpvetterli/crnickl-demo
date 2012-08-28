@@ -202,7 +202,7 @@ public class StocksAndForexDataLoader {
 		if (volume == null)
 			volume = fbi.createSeries(K.VOLUME_SER.val());
 		visitor.setSeries(1, 5, volume);
-		file.scan("Resources/FBI.csv", visitor);
+		file.scan("data/FBI.csv", visitor);
 		price.applyUpdates();
 		volume.applyUpdates();
 
@@ -212,7 +212,7 @@ public class StocksAndForexDataLoader {
 		if (splits == null)
 			splits = fbi.createSeries(K.SPLITS_SER.val());
 		visitor.setSeries(0, 1, splits);
-		file.scan("Resources/FBISplits.csv", visitor);
+		file.scan("data/FBISplits.csv", visitor);
 		splits.applyUpdates();
 	
 		// load price data for KGB
@@ -227,7 +227,7 @@ public class StocksAndForexDataLoader {
 		if (volume == null)
 			volume = kgb.createSeries(K.VOLUME_SER.val());
 		visitor.setSeries(1, 5, volume);
-		file.scan("Resources/KGB.csv", visitor);
+		file.scan("data/KGB.csv", visitor);
 		price.applyUpdates();
 		volume.applyUpdates();
 		
