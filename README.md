@@ -24,23 +24,12 @@ provides a few demos.
 Distribution
 ------------
 
-Starting with version 1.1.2, the distribution consists of a binary JAR with 
-compiled classes and of a source JAR:
+Starting with version 1.1.3, the distribution consists of a binary JAR with 
+compiled classes, of a javadoc JAR and of a source JAR. For version x.y.z:
 
-	crnickl-demo-<version>.jar
-	crnickl-demo-<version>-sources.jar
-
-In the file names `<version>` stands of course for the actual version,
-`1.1.2` for example. For earlier versions, the suffix of the source JAR 
-is `.source` instead of `-sources`.  
-
-Dependencies
-------------
-
-The software is built with maven; dependencies are defined in the <q>POM</q>
-file, included in the binary JAR:
-
-	/META-INF/maven/ch.agent/crnickl-demo/pom.xml
+	crnickl-demo-x.y.z.jar
+	crnickl-demo-x.y.z-javadoc.jar
+	crnickl-demo-x.y.z-sources.jar
 
 Building the software
 ---------------------
@@ -68,19 +57,10 @@ addressed:
 - `jfreechart-<version>.jar` [JFreeChart](http://www.jfree.org/jfreechart/) 
 - `t2-<version>.jar` [Time2 Library](http://agent.ch/timeseries/t2/) 
 
-Versions numbers can be found in the <q>POM</q> file mentionned previously. 
+Versions numbers can be found in the <q>POM</q> file included in the binary 
+JAR:
 
-Generating the documentation
-----------------------------
-
-If you are using maven, you can generate the javadocs with:
-
-	$ mvn javadoc:jar
-
-The documentation is packed into a JAR located in the `target` directory
-and can be browsed by pointing at the file:
-
-	target/apidocs/index.html
+	/META-INF/maven/ch.agent/crnickl-demo/pom.xml
 
 Running the demos
 -----------------
@@ -100,7 +80,7 @@ The following command executes the <q>default</q> demo:
 The same can be done with:
 
 	$ mvn -q -Ddemo.mainClass=ch.agent.crnickl.demo.stox.StocksAndForexDemo \
-		 -Ddemo.args="file=stox-text.parm"
+		 -Ddemo.args="file=stox-text.parm" exec:exec
 	[... output removed ...]
 
 Note: this was executed in a Unix shell, which supports line continuation
@@ -110,7 +90,7 @@ write the command as one long line.
 Another demo produces some graphics:
 
 	$ mvn -q -Ddemo.mainClass=ch.agent.crnickl.demo.stox.StocksAndForexDemo \
-		 -Ddemo.args="file=stox-graphic.parm"
+		 -Ddemo.args="file=stox-graphic.parm" exec:exec
 	[... most output removed ...]
 	/tmp/FBI_KGB_raw.svg
 	/tmp/FBI_KGB_in_USD.svg
@@ -129,7 +109,7 @@ Browsing the source code
 ------------------------
 
 The source is available on GitHub at 
-<http://github.com/jpvetterli/time2lib.git>.
+<http://github.com/jpvetterli/crnickl-demo.git>.
 
 Finding more information
 ------------------------
@@ -137,7 +117,7 @@ Finding more information
 More information on CrNiCKL is available at 
 <http://agent.ch/timeseries/crnickl>.
 
-<small>Updated: 2012-08-28/jpv</small>
+<small>Updated: 2012-09-07/jpv</small>
 
 <link rel="stylesheet" type="text/css" href="README.css"/>
 

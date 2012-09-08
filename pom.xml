@@ -20,7 +20,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>ch.agent</groupId>
   <artifactId>crnickl-demo</artifactId>
-  <version>1.1.2</version>
+  <version>1.1.3</version>
   <packaging>jar</packaging>
   <name>CrNiCKL database demos</name>
   <url>http://agent.ch/timeseries/crnickl/</url>
@@ -32,22 +32,28 @@
     </license>
   </licenses>
 
+  <scm>
+    <connection>scm:git:git@github.com:jpvetterli/crnickl-demo.git</connection>
+    <developerConnection>scm:git:git@github.com:jpvetterli/crnickl-demo.git</developerConnection>
+    <url>https://github.com/jpvetterli/crnickl-demo.git</url>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>jpv</id>
+      <name>Jean-Paul Vetterli</name>
+      <email>vetterli@gmail.com</email>
+    </developer>
+  </developers>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.test.skip>true</maven.test.skip>
-    <exec.executable>java</exec.executable>
+    <exec.executable>${java.home}/bin/java</exec.executable>
     <exec.args>-cp %classpath ${demo.mainClass} ${demo.args}</exec.args>
     <demo.mainClass>ch.agent.crnickl.demo.stox.StocksAndForexDemo</demo.mainClass>
     <demo.args>file=stox-text.parm</demo.args>
   </properties>
-
-  <repositories>
-    <repository>
-      <!-- t2 and crnickl are not on a central repository yet -->
-      <id>jpvetterli on github.com</id>
-      <url>https://raw.github.com/jpvetterli/maven-repo/master/releases/</url>
-    </repository>
-  </repositories>
 
   <build>
     <resources>
@@ -99,14 +105,14 @@
           <show>protected</show>
           <nohelp>true</nohelp>
         </configuration>
-        <!--executions>
+        <executions>
           <execution>
             <id>attach-javadocs</id>
             <goals>
               <goal>jar</goal>
             </goals>
           </execution>
-        </executions-->
+        </executions>
       </plugin>
 
       <plugin>
@@ -120,24 +126,11 @@
   </build>
 
   <dependencies>
-    <dependency>
-      <groupId>ch.agent</groupId>
-      <artifactId>t2</artifactId>
-      <version>1.1.5</version>
-      <scope>compile</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>ch.agent</groupId>
-      <artifactId>crnickl</artifactId>
-      <version>1.1.1</version>
-      <scope>compile</scope>
-    </dependency>
 
     <dependency>
       <groupId>ch.agent</groupId>
       <artifactId>crnickl-jdbc</artifactId>
-      <version>1.1.1</version>
+      <version>1.1.2</version>
       <scope>compile</scope>
     </dependency>
 
