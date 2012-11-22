@@ -25,14 +25,14 @@ import java.sql.SQLException;
 
 import ch.agent.core.KeyedException;
 import ch.agent.crnickl.T2DBException;
+import ch.agent.crnickl.T2DBMsg;
+import ch.agent.crnickl.T2DBMsg.E;
 import ch.agent.crnickl.api.Series;
 import ch.agent.crnickl.api.UpdatableSeries;
 import ch.agent.crnickl.impl.ChronicleUpdatePolicy;
 import ch.agent.crnickl.impl.Permission;
 import ch.agent.crnickl.impl.ValueAccessMethods;
 import ch.agent.crnickl.jdbc.JDBCDatabaseMethods;
-import ch.agent.crnickl.jdbc.T2DBJMsg;
-import ch.agent.crnickl.jdbc.T2DBJMsg.J;
 import ch.agent.t2.time.Range;
 import ch.agent.t2.time.TimeDomain;
 import ch.agent.t2.time.TimeIndex;
@@ -86,7 +86,7 @@ public class AccessMethodsForGeoCoord extends JDBCDatabaseMethods implements Val
 					range = null;
 			}
 		} catch (Exception e) {
-			throw T2DBJMsg.exception(e, J.J50122, series.getName(true));
+			throw T2DBMsg.exception(e, E.E50122, series.getName(true));
 		} finally {
 			select_range = close(select_range);
 		}
@@ -128,9 +128,9 @@ public class AccessMethodsForGeoCoord extends JDBCDatabaseMethods implements Val
 			}
 		} catch (Exception e) {
 			if (range == null)
-				throw T2DBJMsg.exception(e, J.J50121, series.getName(true));
+				throw T2DBMsg.exception(e, E.E50121, series.getName(true));
 			else
-				throw T2DBJMsg.exception(e, J.J50120, series.getName(true), range.toString());
+				throw T2DBMsg.exception(e, E.E50120, series.getName(true), range.toString());
 		} finally {
 			select_double = close(select_double);
 			select_double_by_range = close(select_double_by_range);
@@ -172,7 +172,7 @@ public class AccessMethodsForGeoCoord extends JDBCDatabaseMethods implements Val
 				obs = new Observation<GeoCoord>(t, coord);
 			}
 		} catch (Exception e) {
-				throw T2DBJMsg.exception(e, J.J50123, series.getName(true), time.toString());
+				throw T2DBMsg.exception(e, E.E50123, series.getName(true), time.toString());
 		} finally {
 			select_first_double1 = close(select_first_double1);
 			select_first_double2 = close(select_first_double2);
@@ -214,7 +214,7 @@ public class AccessMethodsForGeoCoord extends JDBCDatabaseMethods implements Val
 				obs = new Observation<GeoCoord>(t, coord);
 			}
 		} catch (Exception e) {
-				throw T2DBJMsg.exception(e, J.J50124, series.getName(true), time.toString());
+				throw T2DBMsg.exception(e, E.E50124, series.getName(true), time.toString());
 		} finally {
 			select_last_double1 = close(select_last_double1);
 			select_last_double2 = close(select_last_double2);
@@ -238,7 +238,7 @@ public class AccessMethodsForGeoCoord extends JDBCDatabaseMethods implements Val
 			delete_values_by_t.execute();
 			done = delete_values_by_t.getUpdateCount() > 0;
 		} catch (Exception e) {
-			throw T2DBJMsg.exception(e, J.J50113, series.getName(true), t.toString());
+			throw T2DBMsg.exception(e, E.E50113, series.getName(true), t.toString());
 		} finally {
 			delete_values_by_t = close(delete_values_by_t);
 		}
@@ -270,7 +270,7 @@ public class AccessMethodsForGeoCoord extends JDBCDatabaseMethods implements Val
 			if (update_series_range.getUpdateCount() > 0)
 				done = true;
 		} catch (Exception e) {
-			throw T2DBJMsg.exception(e, J.J50109, series.getName(true));
+			throw T2DBMsg.exception(e, E.E50109, series.getName(true));
 		} finally {
 			update_series_range = close(update_series_range);
 		}
@@ -306,7 +306,7 @@ public class AccessMethodsForGeoCoord extends JDBCDatabaseMethods implements Val
 		} catch (SQLException e) {
 			done = updateValue(e, series, obs, policy);
 		} catch (KeyedException e) {
-			throw T2DBJMsg.exception(e, J.J50110, series.getName(true), obs.getTime().toString());
+			throw T2DBMsg.exception(e, E.E50110, series.getName(true), obs.getTime().toString());
 		} finally {
 			insert_value = close(insert_value);
 		}
@@ -333,7 +333,7 @@ public class AccessMethodsForGeoCoord extends JDBCDatabaseMethods implements Val
 			update_value.execute();
 			done = update_value.getUpdateCount() > 0;
 		} catch (Exception e) {
-			throw T2DBJMsg.exception(originalException, J.J50110, series.getName(true), obs.getTime().toString());
+			throw T2DBMsg.exception(originalException, E.E50110, series.getName(true), obs.getTime().toString());
 		} finally {
 			update_value = close(update_value);
 		}
