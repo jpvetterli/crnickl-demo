@@ -21,6 +21,7 @@ package ch.agent.crnickl.demo.stox;
 
 import ch.agent.crnickl.T2DBException;
 import ch.agent.crnickl.api.Database;
+import ch.agent.crnickl.api.Property;
 import ch.agent.crnickl.api.Schema;
 import ch.agent.crnickl.api.UpdatableChronicle;
 import ch.agent.crnickl.api.UpdatableSchema;
@@ -204,7 +205,9 @@ public class StocksAndForexSchema {
 		schema.addAttribute(1);
 		schema.setAttributeProperty(1, db.getProperty(K.TICKER_PROP.val(), true));
 		schema.addAttribute(2);
-		schema.setAttributeProperty(2, db.getProperty(K.CURR_PROP.val(), true));
+		Property<?> prop = db.getProperty(K.CURR_PROP.val(), true);
+		schema.setAttributeProperty(2, prop);
+		schema.setAttributeDefault(2, prop.scan(""));
 		
 		schema.addSeries(1);
 		schema.setSeriesName(1, K.PRICE_SER.val());
@@ -260,9 +263,12 @@ public class StocksAndForexSchema {
 		
 		UpdatableSchema schema = db.createSchema(K.FOREX_SCHEMA.val(), null);
 		schema.addAttribute(1);
-		schema.setAttributeProperty(1, db.getProperty(K.CURR_PROP.val(), true));
+		Property<?> prop = db.getProperty(K.CURR_PROP.val(), true);
+		schema.setAttributeProperty(1, prop);
+		schema.setAttributeDefault(1, prop.getValueType().scan(""));
 		schema.addAttribute(2);
 		schema.setAttributeProperty(2, db.getProperty(K.CURR_BOUGHT_PROP.val(), true));
+		schema.setAttributeDefault(2, prop.getValueType().scan(""));
 		
 		schema.addSeries(1);
 		schema.setSeriesName(1, K.RATE_SER.val());
