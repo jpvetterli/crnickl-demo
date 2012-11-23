@@ -110,8 +110,10 @@ public class StocksAndForexDemo {
 	 * @throws Exception
 	 */
 	public void setUpHyperSQLDatabase() throws Exception {
-		// create tables and indexes of CrNiCKL
-		sql(((JDBCDatabase) db).getConnection(), "sql/HyperSQL_DDL_base.sql");
+		if (db instanceof JDBCDatabase) {
+			// create tables and indexes of CrNiCKL
+			sql(((JDBCDatabase) db).getConnection(), "sql/HyperSQL_DDL_base.sql");
+		}
 	}
 	
 	/**
