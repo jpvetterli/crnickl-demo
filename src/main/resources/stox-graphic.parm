@@ -1,11 +1,3 @@
-db.name=demo
-db.class=ch.agent.crnickl.jdbc.JDBCDatabase
-session.jdbcDriver=org.hsqldb.jdbc.JDBCDriver
-session.jdbcUrl=jdbc:hsqldb:mem:demodb
-session.db=
-session.user=sa
-session.password=
-
 demo.range=1991-09-30,1993-06-30
 demo.chartText1=FBI vs KGB (raw)
 demo.chartText2=FBI vs KGB (raw, in $)

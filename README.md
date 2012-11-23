@@ -80,7 +80,7 @@ The following command executes the <q>default</q> demo:
 The same can be done with:
 
 	$ mvn -q -Ddemo.mainClass=ch.agent.crnickl.demo.stox.StocksAndForexDemo \
-		 -Ddemo.args="file=stox-text.parm" exec:exec
+		 -Ddemo.args="file=stox-text.parm,file=jdbc.parm" exec:exec
 	[... output removed ...]
 
 Note: this was executed in a Unix shell, which supports line continuation
@@ -90,7 +90,7 @@ write the command as one long line.
 Another demo produces some graphics:
 
 	$ mvn -q -Ddemo.mainClass=ch.agent.crnickl.demo.stox.StocksAndForexDemo \
-		 -Ddemo.args="file=stox-graphic.parm" exec:exec
+		 -Ddemo.args="file=stox-graphic.parm,file=jdbc.parm" exec:exec
 	[... most output removed ...]
 	/tmp/FBI_KGB_raw.svg
 	/tmp/FBI_KGB_in_USD.svg
@@ -117,7 +117,7 @@ Finding more information
 More information on CrNiCKL is available at 
 <http://agent.ch/timeseries/crnickl>.
 
-<small>Updated: 2012-09-07/jpv</small>
+<small>Updated: 2012-11-23/jpv</small>
 
 <link rel="stylesheet" type="text/css" href="README.css"/>
 

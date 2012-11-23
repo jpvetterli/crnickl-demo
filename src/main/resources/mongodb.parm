@@ -1,0 +1,11 @@
+db.name = demo
+db.class = ch.agent.crnickl.mongodb.MongoDatabase
+mongodb.db = test
+mongodb.user = guest
+mongodb.password = guess it
+mongodb.writeConcern = SAFE
+dbStrictNameSpace = false
+timeSeriesMaxGap = 50000
+
+
+

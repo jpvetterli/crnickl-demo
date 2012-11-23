@@ -1,5 +1,5 @@
-db.name=geodemo
-db.class=ch.agent.crnickl.demo.geocoord.GeoCoordDatabase
+db.name=demo
+db.class=ch.agent.crnickl.jdbc.JDBCDatabase
 session.jdbcDriver=org.hsqldb.jdbc.JDBCDriver
 session.jdbcUrl=jdbc:hsqldb:mem:demodb
 session.db=
