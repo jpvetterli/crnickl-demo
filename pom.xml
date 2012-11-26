@@ -52,7 +52,7 @@
     <exec.executable>${java.home}/bin/java</exec.executable>
     <exec.args>-cp %classpath ${demo.mainClass} ${demo.args}</exec.args>
     <demo.mainClass>ch.agent.crnickl.demo.stox.StocksAndForexDemo</demo.mainClass>
-    <demo.args>file=stox-text.parm</demo.args>
+    <demo.args>file=stox-text.parm,file=jdbc.parm</demo.args>
   </properties>
 
   <build>
