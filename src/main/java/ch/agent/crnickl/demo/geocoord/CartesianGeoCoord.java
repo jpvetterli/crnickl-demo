@@ -1,5 +1,5 @@
 /*
- *   Copyright 2012 Hauser Olsson GmbH
+ *   Copyright 2011-2013 Hauser Olsson GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * 
- * Package: ch.agent.crnickl.demo.geocoord
- * Type: CartesianGeoCoord
- * Version: 1.0.0
  */
 package ch.agent.crnickl.demo.geocoord;
 
@@ -36,7 +33,6 @@ import java.util.regex.Pattern;
  * Z: meters along the axis of rotation, positive towards N<br>
  * 
  * @author Jean-Paul Vetterli
- * @version 1.0.0
  */
 public class CartesianGeoCoord implements GeoCoord {
 
