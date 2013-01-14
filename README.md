@@ -25,11 +25,12 @@ Distribution
 ------------
 
 Starting with version 1.1.3, the distribution consists of a binary JAR with 
-compiled classes, of a javadoc JAR and of a source JAR. For version x.y.z:
+compiled classes, of a javadoc JAR and of a source JAR. The current version is
+1.1.4:
 
-	crnickl-demo-x.y.z.jar
-	crnickl-demo-x.y.z-javadoc.jar
-	crnickl-demo-x.y.z-sources.jar
+	crnickl-demo-1.1.4.jar
+	crnickl-demo-1.1.4-javadoc.jar
+	crnickl-demo-1.1.4-sources.jar
 
 Building the software
 ---------------------

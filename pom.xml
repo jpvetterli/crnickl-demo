@@ -1,6 +1,6 @@
 <!--
 
-   Copyright 2012 Hauser Olsson GmbH
+   Copyright 2012-2013 Hauser Olsson GmbH
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>ch.agent</groupId>
   <artifactId>crnickl-demo</artifactId>
-  <version>1.1.4-SNAPSHOT</version>
+  <version>1.1.4</version>
   <packaging>jar</packaging>
   <name>CrNiCKL database demos</name>
   <url>http://agent.ch/timeseries/crnickl/</url>
@@ -130,14 +130,14 @@
     <dependency>
       <groupId>ch.agent</groupId>
       <artifactId>crnickl-jdbc</artifactId>
-      <version>1.1.3-SNAPSHOT</version>
+      <version>1.1.3</version>
       <scope>compile</scope>
     </dependency>
     
     <dependency>
       <groupId>ch.agent</groupId>
       <artifactId>crnickl-mongodb</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+      <version>1.0.0</version>
       <scope>compile</scope>
     </dependency>
 
