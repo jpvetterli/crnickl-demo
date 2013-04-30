@@ -18,19 +18,21 @@ crnickl-demo : CrNiCKL Database Demos
 ***
 
 CrNiCKL (pronounced "chronicle") is a database for time series written in 
-Java running on top of SQL and (soon) NoSQL systems. This package
+Java running on top of SQL and NoSQL systems. This package
 provides a few demos.
 
 Distribution
 ------------
 
-Starting with version 1.1.3, the distribution consists of a binary JAR with 
-compiled classes, of a javadoc JAR and of a source JAR. The current version is
-1.1.4:
+The distribution consists of three archives
 
-	crnickl-demo-1.1.4.jar
-	crnickl-demo-1.1.4-javadoc.jar
-	crnickl-demo-1.1.4-sources.jar
+	crnickl-demo-x.y.z.jar
+	crnickl-demo-x.y.z-javadoc.jar
+	crnickl-demo-x.y.z-sources.jar
+
+with compiled classes, HTML documentation, and sources. The version number 
+`x.y.z` follows the maven convention. The distribution also includes .asc 
+files with detached cryptographic signatures.
 
 Building the software
 ---------------------
@@ -49,17 +51,17 @@ repository. They can also be found in the `target` directory.
 When building the software by other means, the following dependencies must be
 addressed:
 
-- `hsqldb-<version>.jar` [HyperSQL Database](http://hsqldb.org/)
-- `sqltool-<version>.jar` [HyperSQL Database](http://hsqldb.org/)
-- `batik-awt-util-<version>.jar` [Batik](http://xmlgraphics.apache.org/batik/)
-- `batik-svggen-<version>.jar` [Batik](http://xmlgraphics.apache.org/batik/)
-- `batik-util-<version>.jar` [Batik](http://xmlgraphics.apache.org/batik/)
-- `jcommon-<version>.jar` [JCommon](http://www.jfree.org/jcommon/)
-- `jfreechart-<version>.jar` [JFreeChart](http://www.jfree.org/jfreechart/) 
-- `t2-<version>.jar` [Time2 Library](http://agent.ch/timeseries/t2/) 
+- `hsqldb-x.y.z.jar` [HyperSQL Database](http://hsqldb.org/)
+- `sqltool-x.y.z.jar` [HyperSQL Database](http://hsqldb.org/)
+- `batik-awt-util-x.y.z.jar` [Batik](http://xmlgraphics.apache.org/batik/)
+- `batik-svggen-x.y.z.jar` [Batik](http://xmlgraphics.apache.org/batik/)
+- `batik-util-x.y.z.jar` [Batik](http://xmlgraphics.apache.org/batik/)
+- `jcommon-x.y.z.jar` [JCommon](http://www.jfree.org/jcommon/)
+- `jfreechart-x.y.z.jar` [JFreeChart](http://www.jfree.org/jfreechart/) 
+- `t2-x.y.z.jar` [Time2 Library](http://agent.ch/timeseries/t2/) 
 
-Versions numbers can be found in the <q>POM</q> file included in the binary 
-JAR:
+Replace all `x.y.z` with the actual version numbers which can be found in the 
+<q>POM</q> file included in the binary JAR:
 
 	/META-INF/maven/ch.agent/crnickl-demo/pom.xml
 
@@ -117,8 +119,7 @@ Finding more information
 
 More information on CrNiCKL is available at 
 <http://agent.ch/timeseries/crnickl>.
-
-<small>Updated: 2013-01-08/jpv</small>
+This README was updated on 2013-04-30 (jpv).
 
 <link rel="stylesheet" type="text/css" href="README.css"/>
 
