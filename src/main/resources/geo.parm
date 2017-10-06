@@ -1,5 +1,6 @@
 db.name=geodemo
 db.class=ch.agent.crnickl.demo.geocoord.GeoCoordDatabase
+timedomaincatalog.class=ch.agent.crnickl.demo.geocoord.FooTimeDomainCatalog
 session.jdbcDriver=org.hsqldb.jdbc.JDBCDriver
 session.jdbcUrl=jdbc:hsqldb:mem:demodb
 session.db=
