@@ -154,13 +154,13 @@
 
     <dependency>
       <groupId>ch.agent</groupId>
-      <artifactId>crnickl-jdbc</artifactId> <version>2.0.0</version>
+      <artifactId>crnickl-jdbc</artifactId> <version>2.0.1</version>
       <scope>compile</scope>
     </dependency>
     
     <dependency>
       <groupId>ch.agent</groupId>
-      <artifactId>crnickl-mongodb</artifactId> <version>2.0.0</version>
+      <artifactId>crnickl-mongodb</artifactId> <version>2.0.1</version>
       <scope>compile</scope>
     </dependency>
 
