@@ -1,6 +1,6 @@
 <!--
 
-   Copyright 2012-2013 Hauser Olsson GmbH
+   Copyright 2012-2017 Hauser Olsson GmbH
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -19,8 +19,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>ch.agent</groupId>
-  <artifactId>crnickl-demo</artifactId>
-  <version>1.1.5</version>
+  <artifactId>crnickl-demo</artifactId> <version>2.0.0</version>
   <packaging>jar</packaging>
   <name>CrNiCKL database demos</name>
   <url>http://agent.ch/timeseries/crnickl/</url>
@@ -76,8 +75,7 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.5.1</version>
+        <artifactId>maven-compiler-plugin</artifactId> <version>3.7.0</version>
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
@@ -85,8 +83,7 @@
       </plugin>
 
       <plugin>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>2.2</version>
+        <artifactId>maven-source-plugin</artifactId> <version>3.0.1</version>
          <executions>
            <execution>
             <id>attach-sources</id>
@@ -98,12 +95,12 @@
       </plugin>
 
       <plugin>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.8.1</version>
+        <artifactId>maven-javadoc-plugin</artifactId> <version>2.9.1</version>
         <configuration>
           <stylesheetfile>javadoc.css</stylesheetfile>
           <show>protected</show>
           <nohelp>true</nohelp>
+          <additionalparam>-Xdoclint:none</additionalparam>
         </configuration>
         <executions>
           <execution>
@@ -117,8 +114,7 @@
 
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.2.1</version>
+        <artifactId>exec-maven-plugin</artifactId> <version>1.6.0</version>
       </plugin>
 
     </plugins>
@@ -138,8 +134,7 @@
         <plugins>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.4</version>
+            <artifactId>maven-gpg-plugin</artifactId> <version>1.6</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
@@ -159,59 +154,60 @@
 
     <dependency>
       <groupId>ch.agent</groupId>
-      <artifactId>crnickl-jdbc</artifactId>
-      <version>1.1.4</version>
+      <artifactId>crnickl-jdbc</artifactId> <version>2.0.0</version>
       <scope>compile</scope>
     </dependency>
     
     <dependency>
       <groupId>ch.agent</groupId>
-      <artifactId>crnickl-mongodb</artifactId>
-      <version>1.0.1</version>
+      <artifactId>crnickl-mongodb</artifactId> <version>2.0.0</version>
       <scope>compile</scope>
     </dependency>
 
     <dependency>
       <groupId>org.hsqldb</groupId>
-      <artifactId>hsqldb</artifactId>
-      <version>2.2.8</version>
+      <artifactId>hsqldb</artifactId> <version>2.2.8</version>
       <scope>compile</scope>
     </dependency>
 
     <dependency>
       <groupId>org.hsqldb</groupId>
-      <artifactId>sqltool</artifactId>
-      <version>2.2.8</version>
+      <artifactId>sqltool</artifactId> <version>2.2.8</version>
       <scope>compile</scope>
     </dependency>
 
     <dependency>
-      <groupId>jfree</groupId>
-      <artifactId>jfreechart</artifactId>
-      <version>1.0.13</version>
+      <groupId>org.jfree</groupId>
+      <artifactId>jfreechart</artifactId>  <version>1.0.19</version>
       <scope>compile</scope>
     </dependency>
 
     <dependency>
-      <groupId>batik</groupId>
-      <artifactId>batik-svggen</artifactId>
-      <version>1.6</version>
+      <groupId>org.apache.xmlgraphics</groupId>
+      <artifactId>batik-svggen</artifactId>  <version>1.7</version>
       <scope>compile</scope>
     </dependency>
 
     <dependency>
-      <groupId>batik</groupId>
-      <artifactId>batik-util</artifactId>
-      <version>1.6</version>
+      <groupId>org.apache.xmlgraphics</groupId>
+      <artifactId>batik-util</artifactId>  <version>1.7</version>
       <scope>compile</scope>
     </dependency>
 
     <dependency>
-      <groupId>batik</groupId>
-      <artifactId>batik-awt-util</artifactId>
-      <version>1.6</version>
+      <groupId>org.apache.xmlgraphics</groupId>
+      <artifactId>batik-awt-util</artifactId>  <version>1.7</version>
       <scope>compile</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.apache.xmlgraphics</groupId>
+      <artifactId>batik-svg-dom</artifactId>  <version>1.7</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <!-- testing (logging stuff would also be used in a production POM) -->
+
 
   </dependencies>
 </project>
