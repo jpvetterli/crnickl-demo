@@ -1,5 +1,5 @@
 /*
- *   Copyright 2011-2013 Hauser Olsson GmbH
+ *   Copyright 2011-2017 Hauser Olsson GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,17 +19,14 @@ package ch.agent.crnickl.demo.geocoord;
 import ch.agent.t2.T2Exception;
 import ch.agent.t2.T2Msg;
 import ch.agent.t2.T2Msg.K;
+import ch.agent.t2.applied.SimpleSubPeriodPattern;
 import ch.agent.t2.time.Adjustment;
-import ch.agent.t2.time.BasePeriodPattern;
 import ch.agent.t2.time.Cycle;
 import ch.agent.t2.time.Resolution;
-import ch.agent.t2.time.SimpleSubPeriodPattern;
-import ch.agent.t2.time.SubPeriodPattern;
+import ch.agent.t2.time.Time2;
 import ch.agent.t2.time.TimeDomain;
 import ch.agent.t2.time.TimeDomainDefinition;
-import ch.agent.t2.time.TimeDomainManager;
 import ch.agent.t2.time.TimeIndex;
-import ch.agent.t2.time.engine.Time2;
 
 /**
  * FooTime has time points a few times some days, not even regularly spaced. The
@@ -43,26 +40,17 @@ import ch.agent.t2.time.engine.Time2;
 public class FooTime extends Time2 {
 
 	/**
-	 * A constant holding the definition.
+	 * A constant holding the domain label.
 	 */
-	public static final TimeDomainDefinition DEF = init();
+	public static final String LABEL = "footime";
 
 	/**
 	 * A constant holding the domain.
 	 */
-	public static final TimeDomain DOMAIN = TimeDomainManager.getFactory().get(DEF, true);
-	
-	private static TimeDomainDefinition init() {
-		BasePeriodPattern bpp = new Cycle(true, false, true, true, false, false, true); // Sat,,Mon,Tue,,,Fri
-		SubPeriodPattern spp = null;
-		try {
-			spp = new SimpleSubPeriodPattern(Resolution.DAY, Resolution.SEC, 
-					new int[]{7*3600, 9*3600, 15*3600 + 660, 21*3600 + 2000});
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-		return new TimeDomainDefinition("footime", Resolution.DAY, 0L, bpp, spp);
-	}
+	public static final TimeDomain DOMAIN = new TimeDomainDefinition(LABEL, Resolution.DAY, 0L,
+			new Cycle(true, false, true, true, false, false, true), // Sat,,Mon,Tue,,,Fri
+			new SimpleSubPeriodPattern(Resolution.DAY, Resolution.SEC,
+					new int[] { 7 * 3600, 9 * 3600, 15 * 3600 + 660, 21 * 3600 + 2000 })).asTimeDomain();
 	
 	/**
 	 * Construct a <q>footime</q> time from another time object. 

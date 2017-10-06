@@ -1,5 +1,5 @@
 /*
- *   Copyright 2011-2017 Hauser Olsson GmbH
+ *   Copyright 2011-2013 Hauser Olsson GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,26 @@
  */
 package ch.agent.crnickl.demo.geocoord;
 
-import ch.agent.crnickl.jdbc.JDBCDatabase;
-import ch.agent.t2.time.TimeDomainCatalog;
+import ch.agent.t2.applied.DateTime;
+import ch.agent.t2.applied.Month;
+import ch.agent.t2.applied.Week;
+import ch.agent.t2.applied.Workday;
+import ch.agent.t2.applied.Year;
+import ch.agent.t2.time.Day;
+import ch.agent.t2.time.ImmutableTimeDomainCatalog;
 
 /**
- * Database extension for GeoCoord values.
+ * A time domain catalog supporting yearly, monthly, daily, weekly, workweek, datetime and footime.
  * 
  * @author Jean-Paul Vetterli
  */
-public class GeoCoordDatabase extends JDBCDatabase {
-
-	public GeoCoordDatabase(String name, TimeDomainCatalog catalog) {
-		super(name, catalog);
-		setAccessMethods(GeoCoordValueScanner.class.getName(), new AccessMethodsForGeoCoord());
-	}
+public class FooTimeDomainCatalog extends ImmutableTimeDomainCatalog {
 	
+	/**
+	 * Construct a catalog.
+	 */
+	public FooTimeDomainCatalog() {
+		super(Year.DOMAIN, Month.DOMAIN, Day.DOMAIN, Week.DOMAIN, Workday.DOMAIN, DateTime.DOMAIN, FooTime.DOMAIN);
+	}
+
 }

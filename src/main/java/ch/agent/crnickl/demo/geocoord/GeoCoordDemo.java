@@ -1,5 +1,5 @@
 /*
- *   Copyright 2011-2013 Hauser Olsson GmbH
+ *   Copyright 2011-2017 Hauser Olsson GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,7 +78,6 @@ public class GeoCoordDemo {
 			System.exit(1);
 		}
 		try {
-			System.setProperty("TimeDomainFactory", FooTimeDomainFactory.class.getName());
 			GeoCoordDemo demo = new GeoCoordDemo(args[0]);
 			demo.setUpHyperSQLDatabase();
 			demo.declareFooTimeToBeOkay();

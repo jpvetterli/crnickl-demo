@@ -1,5 +1,5 @@
 /*
- *   Copyright 2011-2013 Hauser Olsson GmbH
+ *   Copyright 2011-2017 Hauser Olsson GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import ch.agent.crnickl.api.UpdatableSchema;
 import ch.agent.crnickl.api.UpdatableValueType;
 import ch.agent.crnickl.api.ValueType;
 import ch.agent.crnickl.demo.stox.DemoConstants.K;
-import ch.agent.t2.time.Workday;
+import ch.agent.t2.applied.Workday;
 
 /**
  * StocksAndForexSchema creates the CrNiCKL schema for the demo.
